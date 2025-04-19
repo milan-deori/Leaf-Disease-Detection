@@ -83,7 +83,7 @@ Edit
 [
   "http://localhost",                 # For development
   "http://localhost:5173",           # React local server
-  "https://potato-leaf-diseases-detection.netlify.app"  # Production frontend
+ 
 ]
 ▶️ Run the Backend
 bash
