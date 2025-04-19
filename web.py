@@ -27,7 +27,9 @@ app.add_middleware(
 MODEL = tf.keras.models.load_model("trained_plant_disease_model.keras")
 
 # Class names for the model output
-CLASS_NAMES = ["Bacterial Spot", " pepper_Healthy", "Early Blight", "Late Blight","Healthy", ]
+CLASS_NAMES = ["Bacterial Spot", "Healthy", "Potato_Early_Blight", "Potato_Late_Blight", "Healthy","Bacterial_spot" ,"Tomato_Early_Blight",
+                "Tomato_Late_Blight", "Leaf_Mold","Septoria_Leaf_Spot", "Spider_Mites_Two_Spotted", "Target_Spot",
+                 "YellowLeaf_Curl_Virus","Mosaic_virus" , "Healthy"]
 
 
 # Read the image and preprocess it
