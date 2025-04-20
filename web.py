@@ -13,7 +13,8 @@ app = FastAPI()
 origins = [
     "http://localhost",            # Local development
     "http://localhost:5173",       # React local development
-    "https://potato-leaf-diseases-detection.netlify.app"  # Your production frontend
+    "https://potato-leaf-diseases-detection.netlify.app",
+      "https://Leaf-diseases-detection.netlify.app"  # Your production frontend
 ]
 app.add_middleware(
     CORSMiddleware,

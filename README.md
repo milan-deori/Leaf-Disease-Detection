@@ -1,98 +1,70 @@
-#🍃 Leaf Disease Detection - FastAPI Backend
-This is the FastAPI-based backend for a plant (Potato & Pepper Bell) leaf disease detection system. It receives an image file from the frontend, processes it, and returns a prediction using a pre-trained TensorFlow model.
+# 🍃 Leaf Disease Detection System
 
-🔧 Tech Stack
-FastAPI – for creating the REST API
+This project is a complete solution for detecting diseases in plant leaves (Potato & Pepper Bell) using a deep learning model. It consists of a **FastAPI backend** and a **React-based frontend** for seamless interaction. Users can upload an image of a leaf, and the system will predict the disease along with its confidence level.
 
-TensorFlow – for loading and making predictions with the trained deep learning model
+---
 
-NumPy – for handling numerical data
+## 🌟 Features
 
-PIL (Pillow) – for image processing
+- **Frontend**: User-friendly interface for uploading leaf images and viewing predictions.
+- **Backend**: FastAPI-based REST API for processing images and returning predictions.
+- **Deep Learning Model**: TensorFlow-based model trained to classify multiple leaf diseases.
+- **Real-time Predictions**: Upload an image and get instant results.
+- **Multi-language Support**: Includes Hindi for better accessibility.
 
-Uvicorn – ASGI server for running the FastAPI app
+---
 
-🚀 API Endpoints
-1. GET /
-Purpose: Health check endpoint to ensure the server is running.
+## 🔧 Tech Stack
 
-Response:
+### Frontend
+- **React**: For building the user interface.
+- **CSS**: For styling the application.
 
-json
-Copy
-Edit
-{
-  "message": "Hello World"
-}
-2. POST /predict
-Purpose: Accepts an image file (PNG, JPG, or JPEG), preprocesses it, and returns the predicted disease class with confidence.
+### Backend
+- **FastAPI**: For creating the REST API.
+- **TensorFlow**: For loading and making predictions with the trained deep learning model.
+- **NumPy**: For handling numerical data.
+- **Pillow (PIL)**: For image processing.
+- **Uvicorn**: ASGI server for running the FastAPI app.
 
-Request:
+---
 
-Method: POST
+## 🚀 How It Works
 
-Content-Type: multipart/form-data
+1. **Frontend**:
+   - Users upload an image of a leaf via the React-based interface.
+   - The image is sent to the backend for processing.
 
-Field name: file (image file)
+2. **Backend**:
+   - The uploaded image is preprocessed (resized to 128x128 pixels).
+   - The TensorFlow model predicts the disease class and confidence.
+   - The result is sent back to the frontend.
 
-Response (example):
+3. **Output**:
+   - The frontend displays the predicted disease and confidence level.
+   - If applicable, a solution link is provided for the detected disease.
 
-json
-Copy
-Edit
-{
-  "class": "Potato___Early_blight",
-  "confidence": 0.9876543
-}
-Possible Errors:
+---
 
-400 Bad Request: Invalid image format or uncertain prediction
+## 📁 Model & Classes
 
-500 Internal Server Error: Unexpected server error
+The TensorFlow model (`trained_plant_disease_model.keras`) is trained to classify the following diseases:
 
-📁 Model & Classes
-The model (trained_plant_disease_model.keras) is a TensorFlow Keras model trained to classify:
-
-python
-Copy
-Edit
+```python
 CLASS_NAMES = [
   "Bacterial Spot",
-  "pepper_Healthy",
-  "Early Blight",
-  "Late Blight",
-  "Healthy"
+  "Pepper Healthy",
+  "Potato Early Blight",
+  "Potato Late Blight",
+  "Potato Healthy",
+  "Tomato Mosaic Virus",
+  "Tomato Yellow Leaf Curl Virus",
+  "Tomato Early Blight",
+  "Tomato Late Blight",
+  "Tomato Leaf Mold",
+  "Tomato Septoria Leaf Spot",
+  "Tomato Spider Mites Two Spotted",
+  "Tomato Target Spot",
+  "Tomato Bacterial Spot",
+  "Tomato Healthy"
 ]
-Ensure that the CLASS_NAMES list matches the exact class order used during model training.
-
-🧠 How It Works
-The image file is uploaded to /predict.
-
-The image is read and resized to 128x128.
-
-It's converted into a NumPy array and batched.
-
-The model predicts the class and returns the most confident result.
-
-🔄 CORS Configuration
-The app allows requests from:
-
-python
-Copy
-Edit
-[
-  "http://localhost",                 # For development
-  "http://localhost:5173",           # React local server
- 
-]
-▶️ Run the Backend
-bash
-Copy
-Edit
-uvicorn main:app --reload
-Or if using __main__ in your script:
-
-bash
-Copy
-Edit
-python main.py

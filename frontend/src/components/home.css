@@ -1,0 +1,374 @@
+body {
+    
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  
+}
+
+.upload-wrapper{
+  height: 100vh; /* Full height minus header */
+  background-image: url("./farms.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers content vertically */
+
+
+}
+.h-container{
+  margin-top: 30px;
+}
+.header{
+  font-size: 40px;
+  display:block;
+  text-align: center;
+  color: #222;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  height: 60px; /* Fixed height for header */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+}
+.hh{
+  font-family: 'GilRoy', sans-serif;
+  font-size: 4.5rem;
+  color: #ffffff; /* White text color */
+  /* text-align: center; */
+   /* Space between title and content */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow effect to the text */
+  font-weight: 600; /* Makes the title bold */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  padding-top: 10px;
+  
+}
+.app h1{
+  font-family: 'GilRoy', sans-serif;
+  font-size: 3rem;
+  color: #ffffff; /* White text color */
+  /* text-align: center; */
+   /* Space between title and content */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow effect to the text */
+  font-weight: 600; /* Makes the title bold */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  padding-top: 10px;
+}
+.btn{
+  font-family: 'GilRoy', sans-serif;
+  font-size: 1rem;
+  color: #ffffff; /* White text color */
+  /* text-align: center; */
+   /* Space between title and content */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.farm{
+  height: 500px;
+
+  width: 800px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column; /* Stack the form vertically */
+  align-items: center; /* Center align the content */
+  gap: 20px; /* Add spacing between elements */
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(218, 213, 213, 0.66); /* Light transparent background */
+  border: 2.5px dotted #007bff; /* Dotted border */
+  border-radius: 12px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  margin: 20px auto; /* Centers the app container */
+  max-width: 800px; /* Increases the width to fit content */
+  flex: 1; 
+  margin-left: 5rem;
+  margin-top: 0;/* Allow the app container to take up available space */
+}
+
+.imgg{
+  border-radius: 1rem;
+  padding-bottom: 0;
+  
+}
+.wrap{
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 6rem;
+  color: #007bff; /* Matches the button color */
+  margin: 1rem 0;
+}
+
+form {
+  margin: 1rem 0;
+}
+
+
+
+button {
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px; 
+  padding: 10px 20px; 
+  font-size: 1.1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #FFC107;
+  font-weight:500;
+  transition: all 0.3s ease; 
+  margin-top: 3rem;
+  
+}
+
+button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+
+
+.mainresult{
+ display: flex;
+ flex-direction: column; /* Stacks the disease and confidence vertically */
+ gap: 10px; /* Adds spacing between the items */
+ font-size: 1.3rem;
+ 
+}
+.link{
+  text-decoration: none;
+  color: #ffffff; 
+}
+
+.upload-label {
+padding: 10px;
+width: 300px;
+justify-content: center;
+border-radius: 8px;
+cursor: pointer;
+transition: all 0.3s ease;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+position: relative;
+background-clip: padding-box;
+}
+
+.upload-label::before {
+content: '';
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+border: 2px dashed #3F7D58;
+border-radius: 20px;
+transition: all 0.3s ease;
+margin-bottom: -2rem;
+}
+
+.upload-label:hover::before {
+top: 10px;
+right: 10px;
+bottom: 10px;
+left: 10px;
+border-color: #F0F1C5;
+}
+
+.upload-label:hover {
+background-color: rgba(63, 125, 88, 0.1);
+}
+
+.upload-label .icon {
+font-size: 3rem;
+color: #3F7D58;
+transition: all 0.3s ease;
+}
+
+.upload-label:hover .icon {
+color: #F0F1C5;
+transform: translateY(-5px);
+}
+
+.preview-and-result {
+  display: flex;
+  flex-direction: row; /* Align items horizontally */
+  justify-content: center; /* Center the content */
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Add space between the image preview and result */
+  margin-top: 20px; /* Add spacing above */
+}
+
+.image-preview {
+  max-width: 256px; /* Fixed width for the preview container */
+  max-height: 200px; /* Fixed height for the preview container */
+  overflow: hidden; /* Ensures content doesn't overflow the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #007bff; /* Optional: Add a border for better visibility */
+  border-radius: 8px; /* Optional: Rounded corners */
+  background-color: #f9f9f9; /* Optional: Light background color */
+}
+
+.image-preview img {
+  max-width: 100%; /* Ensures the image does not exceed the container's width */
+  max-height: 100%; /* Ensures the image does not exceed the container's height */
+  object-fit: contain; /* Ensures the image scales proportionally and fits inside the container */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+.result {
+  flex: 0 0 300px; /* Fix the width of the result container */
+  text-align: left; /* Aligns text to the left for better readability */
+  background-color: rgba(255, 255, 255, 0.9); /* Adds a light background for better visibility */
+  padding: 20px;
+   /* Adds padding inside the result box */
+  border-radius: 8px; /* Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  margin-top: 7rem; /* Moves the result slightly below the image preview */
+}
+
+.result h2 {
+  font-size: 1.5rem; /* Increases the font size of the heading */
+  color: #3F7D58; /* Matches the theme color */
+  margin-bottom: 10px; /* Adds spacing below the heading */
+}
+
+.result p {
+  font-size: 1.2rem; /* Increases the font size of the text */
+  color: #222; /* Darker text color for better readability */
+  margin: 5px 0; /* Adds spacing between lines */
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row; /* Align items horizontally */
+  justify-content: center; /* Center the content */
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Add space between the app and result containers */
+  margin-top: 20px; /* Add spacing above */
+}
+
+@media (max-width: 1200px) {
+  .farm {
+    width: 90%;
+    height: auto;
+  }
+
+  .wrap {
+    margin-left: 0;
+  }
+
+  .app {
+    margin-left: 2rem;
+    padding: 20px;
+  }
+
+  .result {
+    margin-top: 4rem;
+  }
+  .header{
+    margin: 1rem
+  }
+}
+
+@media (max-width: 768px) {
+  .upload-wrapper {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .preview-and-result {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app {
+    margin: 0;
+    width: 90%;
+    padding: 15px;
+  }
+
+  .result {
+    margin-top: 2rem;
+    width: 90%;
+    padding: 15px;
+  }
+
+  .image-preview {
+    width: 90%;
+    height: auto;
+  }
+
+  .image-preview img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hh, .app h1 {
+    font-size: 2.5rem;
+  }
+
+  .icon {
+    font-size: 4rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+
+  .upload-label {
+    width: 90%;
+  }
+  .header{
+    margin: 1rem
+  }
+}
+
+@media (max-width: 480px) {
+  .hh, .app h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .app {
+    padding: 10px;
+  }
+
+  .result h2 {
+    font-size: 1.2rem;
+  }
+
+  .result p {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+  .header{
+    margin: 1rem
+  }
+}
+
+
